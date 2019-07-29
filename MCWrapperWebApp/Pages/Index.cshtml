@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://mcwrapper.com">using MCWrapper</a> to interact with MultiChainCore-based blockchain nodes and networks.</p>
+</div>
+
+<section class="row">
+    <article id="blockchain-info" class="col-lg-6">
+        <label asp-for="BlockchainInfo.BestBlockHash" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.BestBlockHash)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Blocks" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Blocks)</p>
+        <hr/>
+
+        <label asp-for="BlockchainInfo.Chain" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Chain)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.ChainName" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.ChainName)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.ChainRewards" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.ChainRewards)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Chainwork" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Chainwork)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Description" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Description)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Difficulty" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Difficulty)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Headers" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Headers)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.Protocol" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.Protocol)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.ReIndex" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.ReIndex)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.SetupBlocks" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.SetupBlocks)</p>
+        <hr />
+
+        <label asp-for="BlockchainInfo.VerificationProgress" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockchainInfo.VerificationProgress)</p>
+        <hr />
+    </article>
+
+    <article id="block-info" class="col-lg-6">
+        <label asp-for="BlockInfo.Hash" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockInfo.Hash)</p>
+        <hr />
+
+        <label asp-for="BlockInfo.Height" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockInfo.Height)</p>
+        <hr />
+
+        <label asp-for="BlockInfo.Miner" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockInfo.Miner)</p>
+        <hr />
+
+        <label asp-for="BlockInfo.Time" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockInfo.Time)</p>
+        <hr />
+
+        <label asp-for="BlockInfo.TxCount" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.BlockInfo.TxCount)</p>
+        <hr />
+    </article>
+</section>
