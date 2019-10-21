@@ -7,7 +7,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="MCWrapper" Version="2.0.4-beta" />
+    <PackageReference Include="MCWrapper.RPC" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>

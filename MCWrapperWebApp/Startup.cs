@@ -1,4 +1,4 @@
-using MCWrapper;
+using MCWrapper.RPC.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +31,7 @@ namespace MCWrapperWebApp
             // scenario, https://mcwrapper.com/configure-options
             // 
             // IConfiguration or explicit configuration constructors are available as well.
-            services.AddMultiChainCoreServices();
+            services.AddMultiChainCoreRPCServices();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

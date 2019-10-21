@@ -1,5 +1,7 @@
 ﻿@page
+
 @model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
@@ -61,28 +63,6 @@
 
         <label asp-for="BlockchainInfo.VerificationProgress" class="text-uppercase"></label>
         <p>@Html.DisplayFor(m => m.BlockchainInfo.VerificationProgress)</p>
-        <hr />
-    </article>
-
-    <article id="block-info" class="col-lg-6">
-        <label asp-for="BlockInfo.Hash" class="text-uppercase"></label>
-        <p>@Html.DisplayFor(m => m.BlockInfo.Hash)</p>
-        <hr />
-
-        <label asp-for="BlockInfo.Height" class="text-uppercase"></label>
-        <p>@Html.DisplayFor(m => m.BlockInfo.Height)</p>
-        <hr />
-
-        <label asp-for="BlockInfo.Miner" class="text-uppercase"></label>
-        <p>@Html.DisplayFor(m => m.BlockInfo.Miner)</p>
-        <hr />
-
-        <label asp-for="BlockInfo.Time" class="text-uppercase"></label>
-        <p>@Html.DisplayFor(m => m.BlockInfo.Time)</p>
-        <hr />
-
-        <label asp-for="BlockInfo.TxCount" class="text-uppercase"></label>
-        <p>@Html.DisplayFor(m => m.BlockInfo.TxCount)</p>
         <hr />
     </article>
 </section>
