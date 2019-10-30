@@ -31,7 +31,7 @@ namespace MCWrapperWebApp
             // scenario, https://mcwrapper.com/configure-options
             // 
             // IConfiguration or explicit configuration constructors are available as well.
-            services.AddMultiChainCoreRPCServices();
+            services.AddMultiChainCoreRpcServices();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

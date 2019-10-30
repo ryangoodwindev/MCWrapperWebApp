@@ -1,5 +1,5 @@
-﻿using MCWrapper.RPC.Ledger.Clients.Blockchain;
-using MCWrapper.RPC.Ledger.Models.Blockchain;
+﻿using MCWrapper.Data.Models.Blockchain;
+using MCWrapper.RPC.Ledger.Clients;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
