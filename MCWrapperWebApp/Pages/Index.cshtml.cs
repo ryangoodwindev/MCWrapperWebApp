@@ -14,14 +14,14 @@ namespace MCWrapperWebApp.Pages
         // 
         // For this scenario we are using HTTP connections as dictated by the 
         // BlockchainProfileOptions property 'ChainUseSsl' being set as false.
-        private readonly BlockchainRpcClient Blockchain;
+        private readonly IMultiChainRpcGeneral Blockchain;
 
         /// <summary>
         /// Create a new IndexModel instance with parameters
         /// </summary>
         /// <param name="blockchain"></param>
         /// <param name="options"></param>
-        public IndexModel(BlockchainRpcClient blockchain) => Blockchain = blockchain;
+        public IndexModel(IMultiChainRpcGeneral blockchain) => Blockchain = blockchain;
 
         /// <summary>
         /// Blockchain information model
