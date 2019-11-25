@@ -65,4 +65,29 @@
         <p>@Html.DisplayFor(m => m.BlockchainInfo.VerificationProgress)</p>
         <hr />
     </article>
+    <article id="stream-info" class="col-lg-6">
+        <label asp-for="StreamInfo.CreateTxid" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.CreateTxid)</p>
+        <hr />
+
+        <label asp-for="StreamInfo.Creators" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.Creators[0])</p>
+        <hr />
+
+        <label asp-for="StreamInfo.Details" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.Details)</p>
+        <hr />
+
+        <label asp-for="StreamInfo.Name" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.Name)</p>
+        <hr />
+
+        <label asp-for="StreamInfo.Restrict" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.Restrict)</p>
+        <hr />
+
+        <label asp-for="StreamInfo.StreamRef" class="text-uppercase"></label>
+        <p>@Html.DisplayFor(m => m.StreamInfo.StreamRef)</p>
+        <hr />
+    </article>
 </section>

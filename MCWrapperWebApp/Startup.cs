@@ -1,3 +1,4 @@
+using MCWrapper.CLI.Extensions;
 using MCWrapper.RPC.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,15 +26,17 @@ namespace MCWrapperWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             // When using the AddMultiChainCoreServices parameterless constructor
             // BlockchainProfileOptions and RuntimeParamOptions are loaded from 
             // environment variables. Please refer to our help page for this
             // scenario, https://mcwrapper.com/configure-options
             // 
             // IConfiguration or explicit configuration constructors are available as well.
-            services.AddMultiChainCoreRpcServices();
+            services.AddMultiChainCoreRpcServices(Configuration);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMultiChainCoreCliServices(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -1,4 +1,5 @@
-﻿using MCWrapper.Data.Models.Blockchain;
+﻿using MCWrapper.CLI.Ledger.Clients;
+using MCWrapper.Data.Models.Blockchain;
 using MCWrapper.RPC.Ledger.Clients;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,19 +15,27 @@ namespace MCWrapperWebApp.Pages
         // 
         // For this scenario we are using HTTP connections as dictated by the 
         // BlockchainProfileOptions property 'ChainUseSsl' being set as false.
-        private readonly IMultiChainRpcGeneral Blockchain;
+        private readonly IMultiChainRpcGeneral _generalRpc;
+        private readonly IMultiChainCliGeneral _generalCli;
 
         /// <summary>
         /// Create a new IndexModel instance with parameters
         /// </summary>
-        /// <param name="blockchain"></param>
+        /// <param name="generalRpc"></param>
         /// <param name="options"></param>
-        public IndexModel(IMultiChainRpcGeneral blockchain) => Blockchain = blockchain;
+        public IndexModel(IMultiChainRpcGeneral generalRpc,
+            IMultiChainCliGeneral generalCli)
+        {
+            _generalRpc = generalRpc;
+            _generalCli = generalCli;
+        }
 
         /// <summary>
         /// Blockchain information model
         /// </summary>
-        public GetBlockchainInfoResult BlockchainInfo { get; set; }
+        public GetBlockchainInfoResult BlockchainInfo { get; private set; }
+
+        public GetStreamInfoResult StreamInfo { get; private set; }
 
         /// <summary>
         /// GET /Index
@@ -36,9 +45,11 @@ namespace MCWrapperWebApp.Pages
         {
             // Example JSON-RPC call over HTTP;
             // Fetches target blockchain information
-            var blockchainInfo = await Blockchain.GetBlockchainInfoAsync();
+            var blockchainInfo = await _generalRpc.GetBlockchainInfoAsync();
+            var streamInfo = await _generalCli.GetStreamInfoAsync("root", true);
 
             BlockchainInfo = blockchainInfo.Result;
+            StreamInfo = streamInfo.Result;
         }
     }
 }
