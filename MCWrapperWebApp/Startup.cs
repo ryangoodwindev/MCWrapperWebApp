@@ -45,7 +45,6 @@ namespace MCWrapperWebApp
                 rpcOptions.ChainName = "NewChain";
                 rpcOptions.ChainRpcPort = 7764;
                 // default is HTTP if this is left empty
-                rpcOptions.ChainSslPath = string.Empty;
                 rpcOptions.ChainUseSsl = false;
             });
 
